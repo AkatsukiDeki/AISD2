@@ -20,7 +20,7 @@ endif()
 add_library(Vector STATIC "Vector/Vector.cpp")
 add_library(Polynomial STATIC "Polynomial/LinkedList.h")
 target_include_directories(Vector PUBLIC "Vector")
-target_include_directories(Polynomial PUBLIC "Polynomial")
+target_include_directories(Polynomial PUBLIC "LinkedList")
 
 add_executable (${PROJECT_NAME} "main.cpp")
 target_link_libraries(Polynomial PUBLIC Vector)
