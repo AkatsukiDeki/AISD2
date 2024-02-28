@@ -1,40 +1,15 @@
 #include "LinkedList.h"
 
-template <typename T>
-void LinkedList<T>::remove_duplicates() {
-    Node<T>* current = head;
+int main() {
+    LinkedList<int> list;
 
-    while (current != nullptr) {
-        Node<T>* runner = current->next;
+    list.push_tail(1);
+    list.push_tail(2);
+    list.push_tail(3);
+    list.push_tail(4);
+    list.push_tail(5);
 
-        while (runner != nullptr) {
-            if (current->data == runner->data) {
-                Node<T>* duplicate = runner;
-                runner = runner->next;
+    list.remove_duplicates();
 
-                if (duplicate == tail) {
-                    tail = duplicate->prev;
-                }
-
-                if (duplicate == head) {
-                    head = duplicate->next;
-                }
-
-                if (duplicate->prev) {
-                    duplicate->prev->next = duplicate->next;
-                }
-
-                if (duplicate->next) {
-                    duplicate->next->prev = duplicate->prev;
-                }
-
-                delete duplicate;
-            }
-            else {
-                runner = runner->next;
-            }
-        }
-
-        current = current->next;
-    }
+    return 0;
 }
