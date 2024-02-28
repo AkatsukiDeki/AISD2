@@ -18,7 +18,7 @@ if(MSVC)
 endif()
 
 add_library(Vector STATIC "Vector/Vector.cpp")
-add_library(Polynomial STATIC "Polynomial/Polynomial.cpp")
+add_library(Polynomial STATIC "Polynomial/LinkedList.h")
 target_include_directories(Vector PUBLIC "Vector")
 target_include_directories(Polynomial PUBLIC "Polynomial")
 
